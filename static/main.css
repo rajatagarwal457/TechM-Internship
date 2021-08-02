@@ -1,0 +1,24 @@
+.body-bg {
+    background: #5C258D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.input {
+    transition: border 0.2s ease-in-out;
+    min-width: 280px
+}
+
+.input:focus+.label,
+.input:active+.label,
+.input.filled+.label {
+    font-size: .75rem;
+    transition: all 0.2s ease-out;
+    top: -0.1rem;
+    color: #667eea;
+}
+
+.label {
+    transition: all 0.2s ease-out;
+    top: 0.4rem;
+      left: 0;
+}    
