@@ -2,7 +2,11 @@
   <title>Download File</title>
   <h1>Download File</h1>
   <body class="body">
+    <form action="" method="POST">
      <div class="container" align="left">
-      <a href="/return-files/{{value}}" target="blank"><button class='btn btn-default'>Download</button></a>
+       <input id="entity" name="entity" type="text" placeholder = "entity" class="textbox"/></br></br>
+      <a href="{{ url_for('download')}}" target="blank"><button class='btn btn-default'>Download</button></a>
      </div>
+     <div class="msg">{{ msg }}</div>
+   </form>
   </body>
