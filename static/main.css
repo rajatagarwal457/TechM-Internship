@@ -21,4 +21,8 @@
     transition: all 0.2s ease-out;
     top: 0.4rem;
       left: 0;
-}    
+}
+.upload-icon{
+    width: 80%;
+    height: 80%;
+}

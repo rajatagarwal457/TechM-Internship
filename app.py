@@ -40,10 +40,15 @@ class entity_data(db.Model):
 def login():
     if request.method == 'POST':
         user = User.query.filter_by(uname = request.form['username']).first()
+        if not user:
+            return render_template('login.html', msg="Username or Password Incorrect")
         if request.form['password'] == user.password:
             resp = make_response(redirect('upload'))
             resp.set_cookie("id", str(user.id))
             return resp
+        else:
+            return render_template('login.html', msg="Username or Password Incorrect")
+
     return render_template('login.html')
 
 @app.route('/register', methods = ['GET', 'POST'])
@@ -113,7 +118,7 @@ def upload_file():
 # Download API
 @app.route("/download", methods = ['GET', 'POST'])
 
-def download_file():
+def download():
     if os.path.exists('temp.xls'):
         os.remove('temp.xls')
     if request.method == 'POST':

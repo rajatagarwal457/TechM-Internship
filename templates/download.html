@@ -1,12 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Download File</title>
-  <h1>Download File</h1>
-  <body class="body">
-    <form action="" method="POST">
-     <div class="container" align="left">
-       <input id="entity" name="entity" type="text" placeholder = "entity" class="textbox"/></br></br>
-      <a href="{{ url_for('download')}}" target="blank"><button class='btn btn-default'>Download</button></a>
-     </div>
-     <div class="msg">{{ msg }}</div>
-   </form>
-  </body>
+  <meta name="description" content="" />
+
+  <link
+  href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
+  rel="stylesheet"
+  />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+  rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+  rel="stylesheet"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'main.css') }}" />
+</head>
+
+
+<body
+class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0"
+style="font-family: 'Poppins', sans-serif"
+>
+
+<main
+class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl"
+style="font-family: 'Noto Sans', sans-serif"
+>
+<header class="max-w-lg mx-auto">
+  <h1 class="text-4xl font-semibold text-gray-600 text-center pb-8">Download File</h1>
+</header>
+<img>
+<svg xmlns="http://www.w3.org/2000/svg" class="h-13 w-13 download-icon" fill="none" viewBox="-13 -2 50 30" stroke="#5e5e5e">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+</svg>
+</img>
+
+</div>
+<div class="w-full px-5 text-center pb-8">
+  <h1 class="text-2xl font-light text-gray-800 leading-tight">Click the button below to start the download</h1>
+</div>
+<form action="" method="POST">
+  <input id="entity" name="entity" type="text" placeholder = "entity" class="textbox" align="center"/></br></br>
+
+  <div class="flex flex-col w-full px-5 py-5 text-center">
+    <a href="{{ url_for('download')}}">
+      <button class="bg-purple-700 hover:bg-purple-800 text-white rounded px-10 py-3 transition-colors duration-200">Download</button>
+    </a>
+
+    <div class="msg">{{ msg }}</div>
+  </form>
+</div>
+</main>
+
+</body>
+</html>

@@ -1,9 +1,60 @@
-<!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form action="" method="POST" enctype=multipart/form-data>
-      <input id="createdBy" name="createdBy" type="text" placeholder = "Created By" class="textbox"/></br></br>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-    <div class="msg">{{ msg }}</div>
+
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Upload New File</title>
+  <meta name="description" content="" />
+
+  <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'main.css') }}" />
+</head>
+
+
+<body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family: 'Poppins', sans-serif">
+
+  <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl"
+  style="font-family: 'Noto Sans', sans-serif">
+  <header class="max-w-lg mx-auto">
+    <h1 class="text-4xl font-semibold text-gray-600 text-center pb-8">Upload New File</h1>
+  </header>
+
+  <form action="" method="POST" enctype=multipart/form-data>
+    <div class="grid grid-cols-1 space-y-2">
+      <div class="flex items-center justify-center w-full">
+        <label class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
+          <div class="h-full w-full text-center flex flex-col items-center justify-center items-center  ">
+            <div class="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
+              <img class="h-36 object-center upload-icon"
+              src="https://img.icons8.com/wired/200/000000/upload.png">
+            </div>
+
+          </div>
+          <input type=file name=file>
+        </label>
+      </div>
+    </div>
+  </div>
+  <input id="createdBy" name="createdBy" align="middle" type="text" placeholder = "Created By" class="textbox"/></br></br>
+  <div class="flex flex-col w-full px-5 py-5 text-center">
+    <a href="">
+      <button
+      class="bg-purple-700 hover:bg-purple-800 text-white rounded px-10 py-3 transition-colors duration-200">Upload</button>
+    </a>
+  </div>
+</form>
+
+
+</main>
+<div class="msg">{{ msg }}</div>
+
+</body>
+
+</html>
